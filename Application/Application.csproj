@@ -8,7 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Orders\Queries\" />
-    <Folder Include="Products\Commands\" />
+    <Folder Include="Products\Commands\Create Product\" />
+    <Folder Include="Products\Commands\InactiveProduct\" />
   </ItemGroup>
 
   <ItemGroup>
