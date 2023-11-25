@@ -12,8 +12,8 @@ namespace Domain.orders
 		public int customerId { get; set; }
 		public DateTime OrderDate { get; set; }
 		public DateTime DeliveryItem { get; set; }
-
 		public OrderStatus orderStatus { get; set; }
+		public List<OrderItem> Items { get; set; }
 	}
 
 }
