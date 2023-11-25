@@ -30,7 +30,7 @@ public class CreateOrderRequestCommandHandler : IRequestHandler<CreateOrderReque
 		await _dbcontext.SaveChanges();
 
 
-		return Task.CompletedTask;
+		
 	}
 }
 
