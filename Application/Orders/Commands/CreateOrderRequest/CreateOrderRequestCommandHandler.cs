@@ -27,7 +27,7 @@ public class CreateOrderRequestCommandHandler : IRequestHandler<CreateOrderReque
 		orderRequest.orderStatus = OrderStatus.Registered;
 
 		_dbcontext.OrderRequests.Add(orderRequest);
-		await _dbcontext.SaveChanges();
+		await _dbcontext.SaveChangesAsync();
 
 
 		

@@ -1,17 +1,18 @@
 ﻿using Domain.orders;
 using Domain.Products;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+namespace Application.Commons.Contracts;
 
-namespace Application.Commons.Contracts
+public interface IAppDbcontext
 {
-	public interface IAppDbcontext
-	{
-		List<Product> Products { get; }
-		List<OrderRequest> OrderRequests { get; }
-		Task SaveChanges();
-	}
+	DbSet<Product> Products { get; }
+	DbSet<OrderRequest> OrderRequests { get; }
+
+
+	Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
 }

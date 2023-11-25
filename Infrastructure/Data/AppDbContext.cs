@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
-	public class AppDbContext : IAppDbcontext
+	public class AppDbContext : DbContext, IAppDbcontext
 	{
-		public List<Product> Products { get; }
+		
+		public DbSet<Product> Products { get; }
 
-		public List<OrderRequest> OrderRequests { get; }
+		public DbSet<OrderRequest> OrderRequests { get; } 
 
-		public Task SaveChanges()
+
+		public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
 		{
-			throw new NotImplementedException();
+			return base.SaveChangesAsync(cancellationToken);
 		}
 	}
 }
